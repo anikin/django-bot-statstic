@@ -1,0 +1,2 @@
+recursive-include bot_statistic/static *
+recursive-include bot_statistic/template *

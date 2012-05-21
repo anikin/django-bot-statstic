@@ -1,0 +1,6 @@
+.statistic section {overflow:hidden;}
+.statistic {margin: 20px 0px 40px 20px;}
+.statistic h2 {font-size: 15px; margin-bottom: 10px; background-color: #ffdb58; width: 200px; padding: 5px;}
+.statistic h3 {font-size: 25px; margin-bottom: 15px;}
+.statistic article {float: left; width:50%;}
+.statistic p {margin-bottom: 5px;}

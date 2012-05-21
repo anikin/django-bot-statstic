@@ -1,0 +1,42 @@
+{% extends "admin/change_list.html" %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bot_statistic/style.css" />{% endblock %}
+{% block extrahead %}{{ block.super }}<script type="text/javascript" src="{{ STATIC_URL }}bot_statistic/bot_statistic.js"></script>{% endblock %}
+{% block content %}
+<h1>Статистика песещения страниц роботами</h1>
+<div class="statistic">
+<article class="yandex">
+<h3>Яндекс</h3>
+{% regroup yandex_list by log_date.month as yandex %}
+{% for object in yandex %}
+    <section>
+        <h2><a href="#?">{{ object.list.0.log_date|date:"M Y" }}</a></h2>
+        <div class="clear"></div>
+        <div class="down-block" style="height:0; display:block;">
+            <div class="down">                        
+            {% for item in object.list %}
+            <p><a href="http://{{ site.domain }}{{ item.url }}">{{ item.url }}</a></p>
+            {% endfor %}      
+            </div>
+        </div>
+    </section>
+{% endfor %}
+</article>
+<article class="google">
+<h3>Google</h3>
+{% regroup google_list by log_date.month as yandex %}
+{% for object in yandex %}
+    <section>
+        <h2><a href="#?">{{ object.list.0.log_date|date:"M Y" }}</a></h2>
+        <div class="clear"></div>
+        <div class="down-block" style="height:0px;display:block;">
+            <div class="down">                           
+            {% for item in object.list %}
+            <p><a href="http://{{ site.domain }}{{ item.url }}">{{ item.url }}</a></p>
+            {% endfor %}      
+            </div>
+        </div>
+    </section>
+{% endfor %}
+</article>
+</div>
+{% endblock %}
