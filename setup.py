@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'django-bot-statstic',
-    version = '0.1.dev',
+    version = '0.1',
     author = 'Anikin Sergey',
     author_email = 'anikin@trilan.ru',
     description = 'Statistics for Django',
